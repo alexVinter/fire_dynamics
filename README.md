@@ -22,4 +22,4 @@ docker compose exec backend python manage.py createsuperuser
 - **Линтер frontend:** `docker compose exec frontend npm run lint`
 - **Тесты:** `docker compose exec backend python manage.py test core`
 
-Подробное описание и критерии приёмки — в [RELEASE_NOTES.md](RELEASE_NOTES.md).
+Подробнее: [RELEASE_NOTES.md](RELEASE_NOTES.md).
