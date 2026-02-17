@@ -35,5 +35,4 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Локальная инструкция (не в репозиторий)
 PULL_REQUEST.md
