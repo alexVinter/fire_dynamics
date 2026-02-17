@@ -35,6 +35,5 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Локальные файлы (не в репозиторий)
 PULL_REQUEST.md
 docs/Критерии_качества_и_PR.md
