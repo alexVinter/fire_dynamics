@@ -15,11 +15,14 @@ docker compose exec backend python manage.py createsuperuser
 
 ---
 
-## Проверка перед приёмкой (Build, Linter, тесты)
+## Проверка (Build, Linter, тесты)
 
 - **Сборка frontend:** `docker compose exec frontend npm run build`
 - **Линтер backend:** `docker compose exec backend ruff check .`
 - **Линтер frontend:** `docker compose exec frontend npm run lint`
 - **Тесты:** `docker compose exec backend python manage.py test core`
 
+
 Подробное описание — в [RELEASE_NOTES.md](RELEASE_NOTES.md).
+
+Подробнее: [RELEASE_NOTES.md](RELEASE_NOTES.md).
