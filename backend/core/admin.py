@@ -1,5 +1,13 @@
 from django.contrib import admin
-from .models import Brand, TechModel, Modification, ProtectionZone, Component, AssemblyTemplate
+
+from .models import (
+    AssemblyTemplate,
+    Brand,
+    Component,
+    Modification,
+    ProtectionZone,
+    TechModel,
+)
 
 
 @admin.register(Brand)
