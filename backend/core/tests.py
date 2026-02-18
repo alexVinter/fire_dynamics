@@ -84,3 +84,27 @@ class AssemblyTemplateModelTest(TestCase):
             AssemblyTemplate.objects.create(
                 modification=mod, protection_zone=zone, component=comp, quantity=Decimal("3")
             )
+
+
+class CalculateConfigurationTest(TestCase):
+    def test_model_not_found_raises(self):
+        from core.services.calculation import calculate_configuration
+        with self.assertRaises(ValueError) as ctx:
+            calculate_configuration(99999, [1])
+        self.assertIn("99999", str(ctx.exception))
+
+    def test_returns_total_price_and_groups(self):
+        from core.services.calculation import calculate_configuration
+        brand = Brand.objects.create(name="БелАЗ")
+        tech_model = TechModel.objects.create(brand=brand, name="75131")
+        mod = Modification.objects.create(model=tech_model, name="75131-10")
+        zone = ProtectionZone.objects.create(name="Двигатель", code="engine")
+        comp = Component.objects.create(sku="BAL-50", name="Баллон", type="Модуль", price=Decimal("10000"))
+        AssemblyTemplate.objects.create(
+            modification=mod, protection_zone=zone, component=comp, quantity=Decimal("2")
+        )
+        result = calculate_configuration(mod.id, [zone.id])
+        self.assertIn("total_price", result)
+        self.assertIn("groups", result)
+        self.assertEqual(result["total_price"], 20000)
+        self.assertEqual(result["groups"]["Модуль"], [{"id": comp.id, "name": "Баллон", "price": 10000}])

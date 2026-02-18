@@ -25,7 +25,35 @@
 
 ---
 
+# Release notes: Модуль 2 — Логика «Конструктора» (Calculation Core)
+
+## Что сделано
+
+- Сервис расчёта комплектации: `core/services/calculation.py`, функция `calculate_configuration(model_id, zone_ids)`.
+- Принимает ID модификации и список ID зон; возвращает `total_price` и `groups` (компоненты по типам). Базовый шаблон — зона с `code='BASE'`.
+- Unit-тесты расчёта в `core/tests.py` (CalculateConfigurationTest).
+
 ## Как проверить
+
+- **Тесты:** `docker compose exec backend python manage.py test core` — все тесты зелёные.
+- **Линтер:** `docker compose exec backend ruff check .` — без ошибок.
+
+**Ручная проверка расчёта (Django shell):**
+
+```bash
+docker compose exec backend python manage.py shell
+```
+
+В shell по очереди:
+
+```python
+from core.services.calculation import calculate_configuration
+calculate_configuration(1, [2])
+```
+
+Подставь свои `modification_id` и `zone_id` из админки (например, id модификации и id зоны, для которых есть шаблоны в «Шаблоны комплектации»). Ожидается словарь с `total_price` и `groups`.
+
+
 
 ### Запуск проекта
 
@@ -39,6 +67,11 @@ docker compose up --build -d
 docker compose exec backend python manage.py migrate
 docker compose exec backend python manage.py createsuperuser
 ```
+
+Проверка в браузере:
+
+- Backend (админка): http://localhost:8000/admin/
+- Frontend: http://localhost:5173
 
 ### Сборка (Build)
 
@@ -62,5 +95,3 @@ docker compose exec backend python manage.py test core
 ```
 
 Ожидается: все тесты пройдены (OK).
-
----
