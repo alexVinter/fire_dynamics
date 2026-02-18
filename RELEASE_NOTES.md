@@ -40,11 +40,6 @@ docker compose exec backend python manage.py migrate
 docker compose exec backend python manage.py createsuperuser
 ```
 
-Проверка в браузере:
-
-- Backend (админка): http://localhost:8000/admin/
-- Frontend: http://localhost:5173
-
 ### Сборка (Build)
 
 - **Backend:** образ собирается при `docker compose up --build`. Дополнительно: `docker compose build backend`.
@@ -69,11 +64,3 @@ docker compose exec backend python manage.py test core
 Ожидается: все тесты пройдены (OK).
 
 ---
-
-## Приёмка пакета
-
-- Изменения поданы через **Pull Request**.
-- Code review представителем заказчика — без критических замечаний.
-- **Build** и **Linter** выполняются без ошибок (команды выше).
-- Базовые **unit-тесты** есть и проходят.
-- Наличие **Release note**: данный файл (что сделано и как проверить).
