@@ -93,3 +93,36 @@ class AssemblyTemplate(models.Model):
 
     def __str__(self):
         return f'{self.modification} / {self.protection_zone} / {self.component}: {self.quantity}'
+
+
+class Calculation(models.Model):
+    """Сохранённый расчёт (Модуль 3)."""
+
+    model = models.ForeignKey(
+        Modification,
+        on_delete=models.CASCADE,
+        verbose_name='Модификация',
+        related_name='calculations',
+    )
+    selected_zones = models.ManyToManyField(
+        ProtectionZone,
+        blank=True,
+        verbose_name='Выбранные зоны',
+        related_name='calculations',
+    )
+    total_price = models.DecimalField(
+        max_digits=14,
+        decimal_places=2,
+        default=0,
+        verbose_name='Итоговая цена',
+    )
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
+
+    class Meta:
+        db_table = 'core_calculation'
+        verbose_name = 'Расчёт'
+        verbose_name_plural = 'Расчёты'
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f'{self.model} — {self.total_price} ({self.created_at})'

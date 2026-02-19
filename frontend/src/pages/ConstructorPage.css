@@ -1,0 +1,184 @@
+/* Конструктор: фильтры слева, результат справа (Модуль 3) */
+
+.constructor {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.constructor-header {
+  margin-bottom: 1rem;
+}
+
+.constructor-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.constructor-layout {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.constructor-sidebar {
+  flex: 0 0 30%;
+  min-width: 260px;
+  background: #f6f6f6;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.constructor-main {
+  flex: 1 1 70%;
+  min-width: 0;
+}
+
+.sidebar-block {
+  margin-bottom: 1.25rem;
+}
+
+.sidebar-block:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-block label[for="search"] {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.sidebar-block input[type="text"] {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.model-list {
+  list-style: none;
+  margin-top: 0.5rem;
+  max-height: 220px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.model-list li {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.model-list li:last-child {
+  border-bottom: none;
+}
+
+.model-list li:hover,
+.model-list li.selected {
+  background: #e8f0fe;
+}
+
+.model-list li.selected {
+  font-weight: 500;
+}
+
+.selected-model {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.sidebar-title {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.zone-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.zone-checkbox input {
+  width: 1rem;
+  height: 1rem;
+}
+
+.message {
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.message.error {
+  background: #fee;
+  color: #c00;
+}
+
+.message.success {
+  background: #efe;
+  color: #060;
+}
+
+.loading,
+.hint {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.result-spec {
+  margin-bottom: 1rem;
+}
+
+.result-spec h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.spec-group {
+  margin-bottom: 0.75rem;
+}
+
+.spec-group h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: #444;
+}
+
+.spec-group ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.spec-group li {
+  padding: 0.2rem 0;
+  font-size: 0.9rem;
+}
+
+.result-total {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-save {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-save:hover {
+  background: #1557b0;
+}

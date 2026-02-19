@@ -3,6 +3,7 @@ from django.contrib import admin
 from .models import (
     AssemblyTemplate,
     Brand,
+    Calculation,
     Component,
     Modification,
     ProtectionZone,
@@ -48,3 +49,11 @@ class ComponentAdmin(admin.ModelAdmin):
 class AssemblyTemplateAdmin(admin.ModelAdmin):
     list_display = ('modification', 'protection_zone', 'component', 'quantity')
     list_filter = ('modification', 'protection_zone')
+
+
+@admin.register(Calculation)
+class CalculationAdmin(admin.ModelAdmin):
+    list_display = ('id', 'model', 'total_price', 'created_at')
+    list_filter = ('created_at',)
+    readonly_fields = ('created_at',)
+    filter_horizontal = ('selected_zones',)
