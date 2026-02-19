@@ -80,7 +80,9 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',
-    'http://127.0.0.1:5173',
-]
+_cors_origins = os.environ.get('CORS_ALLOWED_ORIGINS', '').strip()
+CORS_ALLOWED_ORIGINS = (
+    [s.strip() for s in _cors_origins.split(',') if s.strip()]
+    if _cors_origins
+    else ['http://localhost:5173', 'http://127.0.0.1:5173']
+)
