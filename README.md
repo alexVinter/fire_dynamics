@@ -1,4 +1,8 @@
-# Запуск проекта
+# Динамика огня
+
+Каталог техники и конструктор комплектации систем (тушение). Стек: Django, React + Vite, PostgreSQL, Docker. Модули 1–3: справочники, расчёт комплектации, UI конструктора.
+
+## Запуск проекта
 
 1. Установить Docker Desktop
 2. В корне проекта выполнить:
@@ -22,4 +26,4 @@ docker compose exec backend python manage.py createsuperuser
 - **Линтер frontend:** `docker compose exec frontend npm run lint`
 - **Тесты:** `docker compose exec backend python manage.py test core`
 
-Подробное описание — в [RELEASE_NOTES.md](RELEASE_NOTES.md).
+Подробнее: [RELEASE_NOTES.md](RELEASE_NOTES.md).
