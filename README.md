@@ -11,6 +11,15 @@
 docker compose up --build
 ```
 
+**Если пакетная загрузка .xlsx не работает** (ошибка про pandas/rapidfuzz), пакеты должны быть в образе backend. Пересоберите образ (при медленном интернете может понадобиться несколько попыток):
+
+```bash
+docker compose build backend --no-cache
+docker compose up -d backend
+```
+
+Проверка: `docker compose exec backend pip list | findstr "pandas rapidfuzz"` — должны быть в списке.
+
 3. Для создания суперпользователя:
 
 ```bash

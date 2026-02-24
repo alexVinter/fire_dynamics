@@ -26,7 +26,7 @@ class TechModelAdmin(admin.ModelAdmin):
 
 @admin.register(Modification)
 class ModificationAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'model', 'search_keywords')
+    list_display = ('id', 'name', 'model', 'search_keywords', 'specs')
     list_filter = ('model__brand', 'model')
     search_fields = ('name', 'search_keywords', 'model__name', 'model__brand__name')
 

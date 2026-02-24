@@ -1,0 +1,99 @@
+.bulk-upload-table-wrap {
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+.bulk-upload-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.bulk-upload-table th,
+.bulk-upload-table td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.bulk-upload-table th {
+  background: #f0f0f0;
+  font-weight: 600;
+}
+
+.bulk-upload-table tr.bulk-row--not-found {
+  background: #fff5f5;
+}
+
+.bulk-status-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-right: 0.35rem;
+}
+
+.bulk-status-icon--ok {
+  background: #d4edda;
+  color: #155724;
+}
+
+.bulk-status-icon--warn {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.bulk-status-icon--error {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.bulk-select-model {
+  min-width: 220px;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.bulk-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.bulk-message--error {
+  color: #c00;
+  font-size: 0.9rem;
+}
+
+.bulk-message--warn {
+  color: #856404;
+  font-size: 0.9rem;
+  background: #fff3cd;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+}
+
+.bulk-btn-confirm {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.bulk-btn-confirm:hover:not(:disabled) {
+  background: #1557b0;
+}
+
+.bulk-btn-confirm:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}

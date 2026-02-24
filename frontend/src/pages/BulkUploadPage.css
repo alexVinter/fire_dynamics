@@ -1,0 +1,51 @@
+.bulk-upload-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.bulk-upload-page__title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.bulk-upload-page__hint {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.bulk-upload-page__upload {
+  margin-bottom: 0.5rem;
+}
+
+.bulk-upload-page__label {
+  display: inline-block;
+}
+
+.bulk-upload-page__label-text {
+  margin-right: 0.5rem;
+}
+
+.bulk-upload-page__input {
+  font-size: 0.9rem;
+}
+
+.bulk-upload-page__loading {
+  display: inline-block;
+  margin-left: 1rem;
+  color: #1a73e8;
+  font-size: 0.9rem;
+}
+
+.bulk-upload-page__error {
+  color: #c00;
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}
+
+.bulk-upload-page__success {
+  color: #155724;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}

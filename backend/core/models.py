@@ -33,6 +33,7 @@ class Modification(models.Model):
     model = models.ForeignKey(TechModel, on_delete=models.CASCADE, verbose_name='Модель техники')
     name = models.CharField(max_length=255, verbose_name='Название')
     search_keywords = models.TextField(blank=True, verbose_name='Синонимы для поиска')
+    specs = models.JSONField(default=dict, blank=True, verbose_name='Характеристики (AI)')
 
     class Meta:
         db_table = 'core_modification'
